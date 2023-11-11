@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
 import { useSelector } from 'react-redux'
@@ -37,6 +37,11 @@ const Month = () => {
       total: pay + income,
     }
   }, [currentMonthList])
+
+  useEffect(() => {
+    const nowDate = dayjs(new Date()).format('YYYY | M')
+    setCurrentMonthList(monthGroup[nowDate] || [])
+  }, [monthGroup])
 
   const onConfirm = (date) => {
     setDateVisible(false)
