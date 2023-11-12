@@ -106,11 +106,24 @@
       "id": 22
     },
     {
+      "type": "income",
+      "money": 10000,
+      "useFor": "salary",
+      "id": 23
+    },
+    {
       "type": "pay",
       "money": -50,
       "date": "2023-11-12T07:15:25.625Z",
       "useFor": "food",
-      "id": 23
+      "id": 24
+    },
+    {
+      "type": "pay",
+      "money": 0,
+      "date": "2023-11-12T07:21:11.624Z",
+      "useFor": "",
+      "id": 25
     }
   ]
 }

@@ -149,11 +149,12 @@
   .btns {
     position: fixed;
     bottom: 15px;
-    width: 100%;
+    left: calc(50% - 100px);
+    width: 200px;
     text-align: center;
 
     .btn {
-      width: 200px;
+      width: 100%;
       --border-width: 0;
       --background-color: #fafafa;
       --text-color: #616161;
