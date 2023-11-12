@@ -83,6 +83,34 @@
       "date": "2023-04-03T11:14:56.036Z",
       "useFor": "food",
       "id": 19
+    },
+    {
+      "type": "pay",
+      "money": -123,
+      "date": "2023-11-12T06:54:16.336Z",
+      "useFor": "taxi",
+      "id": 20
+    },
+    {
+      "type": "pay",
+      "money": -50,
+      "date": "2023-11-07T16:00:00.000Z",
+      "useFor": "food",
+      "id": 21
+    },
+    {
+      "type": "income",
+      "money": 10000,
+      "date": "2013-11-11T16:00:00.000Z",
+      "useFor": "salary",
+      "id": 22
+    },
+    {
+      "type": "pay",
+      "money": -50,
+      "date": "2023-11-12T07:15:25.625Z",
+      "useFor": "food",
+      "id": 23
     }
   ]
 }

@@ -1,14 +1,40 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import classNames from 'classnames'
+import dayjs from 'dayjs'
 import { Button, DatePicker, Input, NavBar } from 'antd-mobile'
 import Icon from '@/components/Icon'
 import './index.scss'
-import classNames from 'classnames'
+
 import { billListData } from '@/constants'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { addBillList } from '@/store/modules/billStore'
 
 const New = () => {
   const navigate = useNavigate()
   const [billType, setBillType] = useState('pay')
+
+  const [money, setMoney] = useState(0)
+  const moneyChange = (value) => {
+    setMoney(value)
+  }
+
+  const [useFor, setUseFor] = useState('')
+  const dispatch = useDispatch()
+  const saveBill = () => {
+    const data = {
+      type: billType,
+      money: billType === 'pay' ? -money : +money,
+      date: date,
+      useFor: useFor,
+    }
+    dispatch(addBillList(data))
+  }
+  const [date, setDate] = useState(new Date())
+  const [dateVisible, setDateVisible] = useState(false)
+  const dateConfirm = (value) => {
+    setDate(value)
+  }
   return (
     <div className='keepAccounts'>
       <NavBar
@@ -43,18 +69,29 @@ const New = () => {
                 type='calendar'
                 className='icon'
               />
-              <span className='text'>{'今天'}</span>
+              <span
+                className='text'
+                onClick={() => setDateVisible(true)}
+              >
+                {dayjs(date).format('YYYY-MM-DD')}
+              </span>
               <DatePicker
                 className='kaDate'
                 title='记账日期'
                 max={new Date()}
+                visible={dateVisible}
+                onConfirm={dateConfirm}
+                onClose={() => setDateVisible(false)}
+                onCancel={() => setDateVisible(false)}
               />
             </div>
             <div className='kaInput'>
               <Input
                 className='input'
-                placeholder='0.00'
+                placeholder='请输入金额'
                 type='number'
+                value={money}
+                onChange={moneyChange}
               />
               <span className='iconYuan'>¥</span>
             </div>
@@ -74,8 +111,12 @@ const New = () => {
                 {item.list.map((item) => {
                   return (
                     <div
-                      className={classNames('item', '')}
+                      className={classNames(
+                        'item',
+                        useFor === item.type && 'selected'
+                      )}
                       key={item.type}
+                      onClick={() => setUseFor(item.type)}
                     >
                       <div className='icon'>
                         <Icon type={item.type} />
@@ -91,7 +132,12 @@ const New = () => {
       </div>
 
       <div className='btns'>
-        <Button className='btn save'>保 存</Button>
+        <Button
+          className='btn save'
+          onClick={saveBill}
+        >
+          保 存
+        </Button>
       </div>
     </div>
   )
