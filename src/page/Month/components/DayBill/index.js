@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import classNames from 'classnames'
 import './index.scss'
 import { billTypeToName } from '@/constants'
+import Icon from '@/components/Icon'
 
 const DailyBill = ({ date, billList }) => {
   const dayResult = useMemo(() => {
@@ -52,6 +53,7 @@ const DailyBill = ({ date, billList }) => {
                 className='bill'
                 key={item.id}
               >
+                <Icon type={item.useFor} />
                 <div className='detail'>
                   <div className='billType'>{billTypeToName[item.useFor]}</div>
                 </div>

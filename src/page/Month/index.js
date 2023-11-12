@@ -62,8 +62,6 @@ const Month = () => {
     }
   }, [currentMonthList])
 
-  const [currentDayList, setCurrentDayList] = useState([])
-
   return (
     <div className='monthlyBill'>
       <NavBar
