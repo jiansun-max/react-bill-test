@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import _ from 'lodash'
 import { NavBar, DatePicker } from 'antd-mobile'
 import './index.scss'
+import DailyBill from './components/DayBill'
 
 const Month = () => {
   const billList = useSelector((state) => state.bill.billList)
@@ -49,6 +50,19 @@ const Month = () => {
     setCurrentMonthList(monthGroup[formatDate] || [])
     setCurrentDate(formatDate)
   }
+
+  const dayGroup = useMemo(() => {
+    const groupData = _.groupBy(currentMonthList, (item) => {
+      return dayjs(item.date).format('YYYY年MM月DD日')
+    })
+    const keys = Object.keys(groupData)
+    return {
+      groupData,
+      keys,
+    }
+  }, [currentMonthList])
+
+  const [currentDayList, setCurrentDayList] = useState([])
 
   return (
     <div className='monthlyBill'>
@@ -97,6 +111,13 @@ const Month = () => {
             onClose={() => setDateVisible(false)}
           />
         </div>
+        {dayGroup.keys.map((key) => (
+          <DailyBill
+            key={key}
+            billList={dayGroup.groupData[key]}
+            date={key}
+          />
+        ))}
       </div>
     </div>
   )
