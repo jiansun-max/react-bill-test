@@ -106,26 +106,6 @@
       "id": 22
     },
     {
-      "type": "income",
-      "money": 10000,
-      "useFor": "salary",
-      "id": 23
-    },
-    {
-      "type": "pay",
-      "money": -50,
-      "date": "2023-11-12T07:15:25.625Z",
-      "useFor": "food",
-      "id": 24
-    },
-    {
-      "type": "pay",
-      "money": 0,
-      "date": "2023-11-12T07:21:11.624Z",
-      "useFor": "",
-      "id": 25
-    },
-    {
       "type": "pay",
       "money": -1200,
       "date": "2023-11-15T09:09:57.312Z",
@@ -155,10 +135,24 @@
     },
     {
       "type": "pay",
-      "money": -45000,
-      "date": "2023-11-15T09:11:28.875Z",
-      "useFor": "bag",
-      "id": 30
+      "money": -50,
+      "date": "2023-11-29T06:08:11.341Z",
+      "useFor": "clothes",
+      "id": 31
+    },
+    {
+      "type": "income",
+      "money": 25050,
+      "date": "2023-11-29T06:08:11.341Z",
+      "useFor": "salary",
+      "id": 32
+    },
+    {
+      "type": "pay",
+      "money": -648,
+      "date": "2023-11-29T07:16:05.243Z",
+      "useFor": "game",
+      "id": 33
     }
   ]
 }
