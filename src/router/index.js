@@ -1,29 +1,29 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from "react-router-dom";
 
-import Layout from '@/page/Layout'
-import Month from '@/page/Month'
-import New from '@/page/New'
-import Year from '@/page/Year'
+import Layout from "@/page/Layout";
+import Month from "@/page/Month";
+import New from "@/page/New";
+import Year from "@/page/Year";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
-        path: 'month',
+        path: "month",
         element: <Month />,
       },
       {
-        path: 'year',
+        path: "year",
         element: <Year />,
       },
     ],
   },
   {
-    path: 'new',
+    path: "new",
     element: <New />,
   },
-])
+]);
 
-export default router
+export default router;

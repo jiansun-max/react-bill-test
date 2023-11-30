@@ -101,7 +101,7 @@
     {
       "type": "income",
       "money": 10000,
-      "date": "2013-11-11T16:00:00.000Z",
+      "date": "2013-10-11T16:00:00.000Z",
       "useFor": "salary",
       "id": 22
     },
@@ -114,38 +114,10 @@
     },
     {
       "type": "pay",
-      "money": -1200,
-      "date": "2023-11-15T09:09:57.312Z",
-      "useFor": "food",
-      "id": 27
-    },
-    {
-      "type": "pay",
-      "money": -1200,
-      "date": "2023-11-15T09:09:57.312Z",
-      "useFor": "food",
-      "id": 28
-    },
-    {
-      "type": "pay",
-      "money": -1200,
-      "date": "2023-11-15T09:09:57.312Z",
-      "useFor": "food",
-      "id": 29
-    },
-    {
-      "type": "pay",
       "money": -50,
       "date": "2023-11-29T06:08:11.341Z",
       "useFor": "clothes",
       "id": 31
-    },
-    {
-      "type": "income",
-      "money": 25050,
-      "date": "2023-11-29T06:08:11.341Z",
-      "useFor": "salary",
-      "id": 32
     },
     {
       "type": "pay",
@@ -153,6 +125,20 @@
       "date": "2023-11-29T07:16:05.243Z",
       "useFor": "game",
       "id": 33
+    },
+    {
+      "type": "income",
+      "money": 15668,
+      "date": "2023-11-11T16:00:00.000Z",
+      "useFor": "salary",
+      "id": 34
+    },
+    {
+      "type": "income",
+      "money": 16232,
+      "date": "2023-10-11T16:00:00.000Z",
+      "useFor": "salary",
+      "id": 35
     }
   ]
 }
